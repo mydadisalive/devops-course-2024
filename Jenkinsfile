@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    triggers {
+        // poll SCM every 5 minutes
+        pollSCM('*/5 * * * *')
+    }
+    
     stages {
         stage('Clone Code') {
             steps {
@@ -13,6 +18,7 @@ pipeline {
             steps {
                 echo 'Build'
                 bat 'docker pull hello-world'
+                // will be replaced with docker build commands
             }
         }
         stage('Test') {
