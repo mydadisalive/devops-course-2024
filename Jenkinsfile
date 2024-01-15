@@ -7,7 +7,6 @@ pipeline {
                 cleanWs()
                 echo 'Show Workspace'
                 bat 'git clone https://github.com/mydadisalive/devops-course-2024.git'
-                bat 'echo Current Directory: %cd% && dir'
             }
         }
         stage('Build') {
