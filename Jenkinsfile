@@ -25,11 +25,13 @@ pipeline {
             steps {
                 echo 'Test'
                 bat 'docker run hello-world'
+                // run tests
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploy'
+                // deploy commands
             }
         }
     }
